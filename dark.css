@@ -1,0 +1,108 @@
+:root {
+    /* Base colors */
+    --color-primary: #0d1117;
+    --color-secondary: #161b22;
+    --color-accent: #a2d2fb;
+    --color-text: #ecf2f8;
+    --color-border: #2c3e50;
+  
+    /* Interactive states */
+    --color-hover: #89929b;
+    --color-focus: #c6cdd5;
+  
+    /* Alert colors */
+    --color-success: #334155;
+    --color-error: #fa7970;
+    --color-info: #21262d;
+  
+    /* Apply colors */
+    --body-color: var(--color-text);
+    --body-background: var(--color-primary);
+    --hr-border-color: var(--color-border);
+    --title-color: var(--color-accent);
+    --link-color: var(--color-text);
+    --link-focus-color: var(--color-focus);
+    --link-hover-color: var(--color-hover);
+    --link-visited-color: var(--color-focus);
+    --header-list-border-color: var(--color-border);
+    --header-link-color: var(--color-text);
+    --header-link-focus-color: var(--color-focus);
+    --header-link-hover-color: var(--color-hover);
+    --header-active-link-color: var(--color-accent);
+    --table-border-color: var(--color-border);
+    --table-th-background: var(--color-secondary);
+    --table-th-color: var(--color-text);
+    --table-tr-hover-background-color: var(--color-border);
+    --table-tr-hover-color: var(--color-text);
+    --button-primary-border-color: var(--color-border);
+    --button-primary-background: var(--color-border);
+    --button-primary-color: var(--color-primary);
+    --button-primary-focus-border-color: var(--color-border);
+    --button-primary-focus-background: var(--color-border);
+    --input-background: var(--color-secondary);
+    --input-color: var(--color-text);
+    --input-placeholder-color: var(--color-hover);
+    --input-focus-color: var(--color-text);
+    --input-focus-border-color: var(--color-accent);
+    --input-focus-box-shadow: 0 0 0 2px var(--color-border);
+    --alert-color: var(--color-text);
+    --alert-background-color: var(--color-primary);
+    --alert-border-color: var(--color-border);
+    --alert-success-color: var(--color-text);
+    --alert-success-background-color: var(--color-success);
+    --alert-success-border-color: var(--color-border);
+    --alert-error-color: var(--color-text);
+    --alert-error-background-color: var(--color-error);
+    --alert-error-border-color: var(--color-border);
+    --alert-info-color: var(--color-text);
+    --alert-info-background-color: var(--color-info);
+    --alert-info-border-color: var(--color-border);
+    --page-header-title-border-color: var(--color-border);
+    --logo-color: var(--color-accent);
+    --logo-hover-color-span: var(--color-accent);
+    --panel-background: var(--color-secondary);
+    --panel-border-color: var(--color-border);
+    --panel-color: var(--color-text);
+    --modal-background: var(--color-primary);
+    --modal-color: var(--color-text);
+    --modal-box-shadow: 2px 0 5px 0 var(--color-border);
+    --pagination-link-color: var(--color-text);
+    --pagination-border-color: var(--color-border);
+    --category-color: var(--color-text);
+    --category-background-color: var(--color-border);
+    --category-border-color: var(--color-border);
+    --category-link-color: var(--color-text);
+    --category-link-hover-color: var(--color-accent);
+    --item-border-color: var(--color-border);
+    --item-status-read-title-link-color: var(--color-accent);
+    --item-status-read-title-focus-color: var(--color-focus);
+    --item-meta-focus-color: var(--color-focus);
+    --item-meta-li-color: var(--color-text);
+    --current-item-border-color: var(--color-accent);
+    --entry-header-border-color: var(--color-border);
+    --entry-header-title-link-color: var(--color-text);
+    --entry-content-color: var(--color-text);
+    --entry-content-code-color: var(--color-accent);
+    --entry-content-code-background: var(--color-secondary);
+    --entry-content-code-border-color: var(--color-border);
+    --entry-content-quote-color: var(--color-focus);
+    --entry-content-abbr-border-color: var(--color-border);
+    --entry-enclosure-border-color: var(--color-border);
+    --parsing-error-color: var(--color-text);
+    --feed-parsing-error-background-color: var(--color-error);
+    --feed-parsing-error-border-color: var(--color-border);
+    --feed-has-unread-background-color: var(--color-success);
+    --feed-has-unread-border-color: var(--color-border);
+    --category-has-unread-background-color: var(--color-success);
+    --category-has-unread-border-color: var(--color-border);
+    --keyboard-shortcuts-li-color: var(--color-text);
+    --counter-color: var(--color-text);
+  }
+  
+  .entry-content {
+    font-size: 1em;
+  }
+  
+  .item {
+    border: none;
+  }
