@@ -1,23 +1,19 @@
 /*
- * Remove the thick green accent bar on the left of unread articles and
- * feed/category cards. Instead of using a gradient and a pseudo-element
- * that create a coloured strip, we revert to the standard card background
- * and simply tint the border for unread status. This keeps the interface
- * clean and consistent without the distracting left border.
+ * Feedly-style Miniflux theme – Forest
+ *
+ * Remove the thick green accent bar on unread articles and feed/category cards.
+ * Use standard card background with a tinted border for unread status.
  */
 
-/* Unread article items */
+/* ─── Unread overrides ─────────────────────────────────────────────── */
+
 .item-status-unread {
-  /* Removed gradient background: use the default surface colour */
   background: var(--mf-surface) !important;
 }
 .item-status-unread::before {
-  /* Remove the coloured stripe pseudo-element */
   content: none !important;
-  display: none !important;
 }
 
-/* Unread feed and category cards */
 .feed-has-unread,
 .category-has-unread {
   background: var(--mf-surface) !important;
@@ -30,7 +26,7 @@
   font-weight: 640 !important;
 }
 
-/* Feedly-style Miniflux theme */
+/* ─── Design tokens ────────────────────────────────────────────────── */
 
 :root {
   color-scheme: light dark;
@@ -161,6 +157,8 @@
   --counter-color: var(--mf-accent-strong);
 }
 
+/* ─── Dark mode tokens ─────────────────────────────────────────────── */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --mf-bg: #0f1511;
@@ -211,6 +209,8 @@
   }
 }
 
+/* ─── Base elements ────────────────────────────────────────────────── */
+
 html {
   min-height: 100%;
   margin: 0;
@@ -251,6 +251,8 @@ hr {
   border-color: var(--mf-border);
 }
 
+/* ─── Shell layout ─────────────────────────────────────────────────── */
+
 .header,
 .page-header,
 #main,
@@ -272,6 +274,8 @@ main {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+/* ─── Alerts ───────────────────────────────────────────────────────── */
 
 .alert,
 .alert-success,
@@ -305,6 +309,8 @@ main {
   background: var(--alert-info-background-color);
   border-color: var(--alert-info-border-color);
 }
+
+/* ─── Header / navigation ──────────────────────────────────────────── */
 
 .header {
   position: sticky;
@@ -382,12 +388,11 @@ main {
   padding: 0 8px;
   color: var(--mf-muted);
   font-size: 0.84rem;
-  line-height: 1;
   white-space: nowrap;
 }
 
+/* Logo overrides — applied after the shared header-link rule above */
 .logo a,
-.header .logo a,
 .header > nav > a:first-child {
   color: var(--mf-accent-strong);
   font-size: 0.9rem;
@@ -402,7 +407,6 @@ main {
   flex: 0 0 auto;
   width: 1em;
   height: 1em;
-  line-height: 1;
 }
 
 .header li a[href="/subscribe"] {
@@ -410,7 +414,6 @@ main {
   padding-left: 7px;
   padding-right: 7px;
   font-size: 0.82rem;
-  line-height: 1;
 }
 
 .header li a:hover,
@@ -436,10 +439,16 @@ main {
   color: var(--mf-accent-strong);
 }
 
+.header li[aria-current="page"] a {
+  padding: 6px 12px;
+}
+
 .header a[aria-label*="unread"],
 .counter {
   font-variant-numeric: tabular-nums;
 }
+
+/* ─── Page header ──────────────────────────────────────────────────── */
 
 .page-header {
   padding: 4px 2px 16px;
@@ -485,8 +494,8 @@ main {
 }
 
 .page-header a:hover,
-.pagination a:hover,
 .page-header a:focus,
+.pagination a:hover,
 .pagination a:focus {
   color: var(--mf-accent-strong);
   border-color: var(--mf-accent);
@@ -497,6 +506,8 @@ main {
   width: 100%;
   margin-top: 18px;
 }
+
+/* ─── Item list ────────────────────────────────────────────────────── */
 
 .items {
   display: grid;
@@ -582,6 +593,7 @@ main {
   color: var(--mf-accent-strong);
 }
 
+/* Read state */
 .item-status-read {
   background: var(--mf-surface-soft);
 }
@@ -595,6 +607,8 @@ main {
 .item-status-read:focus-within .item-title a {
   color: var(--mf-text-soft);
 }
+
+/* ─── Item meta ────────────────────────────────────────────────────── */
 
 .item-meta,
 .item-meta ul {
@@ -615,7 +629,6 @@ main {
   align-items: center;
   margin: 0;
   padding: 0;
-  color: var(--mf-muted);
 }
 
 .item-meta a {
@@ -653,11 +666,6 @@ main {
   list-style: none;
 }
 
-.item-meta-icons li {
-  margin: 0;
-  padding: 0;
-}
-
 .item-meta-icons li > :is(a, button) {
   display: inline-flex;
   align-items: center;
@@ -672,6 +680,12 @@ main {
   color: var(--mf-accent-strong);
   background: var(--mf-accent-soft);
 }
+
+.entry-meta li {
+  align-items: center;
+}
+
+/* ─── Category badge ───────────────────────────────────────────────── */
 
 .category,
 .item-header > a[href^="/category/"] {
@@ -688,6 +702,8 @@ main {
   line-height: 1.35;
   vertical-align: middle;
 }
+
+/* ─── Feed / category cards ────────────────────────────────────────── */
 
 .feed-item,
 .category-item {
@@ -713,7 +729,7 @@ main {
 
 .feed-item > .item-meta {
   box-sizing: border-box;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .feed-item:hover,
@@ -725,19 +741,7 @@ main {
   z-index: 2;
 }
 
-.feed-item .item-title,
-.feed-item .item-title a,
-.category-item .item-title,
-.category-item .item-title a {
-  color: var(--mf-text);
-}
-
-.feed-item .item-meta,
-.feed-item .item-meta li,
-.category-item .item-meta,
-.category-item .item-meta li {
-  color: var(--mf-muted);
-}
+/* ─── Feed parsing error ───────────────────────────────────────────── */
 
 .feed-item.feed-parsing-error {
   color: var(--mf-warning-text) !important;
@@ -773,6 +777,8 @@ main {
   color: var(--mf-warning-title) !important;
 }
 
+/* ─── Entry (article reading view) ─────────────────────────────────── */
+
 .entry-header,
 .entry-content,
 .entry-footer {
@@ -807,7 +813,6 @@ main {
 }
 
 .entry-meta,
-.entry-header .entry-meta,
 .entry-footer {
   color: var(--mf-muted);
   font-size: 0.88rem;
@@ -934,6 +939,8 @@ main {
   padding: 14px 0 28px;
 }
 
+/* ─── Forms ────────────────────────────────────────────────────────── */
+
 .panel,
 fieldset {
   border: 1px solid var(--mf-border);
@@ -1045,6 +1052,8 @@ input[type="radio"] {
   transform: translateY(1px);
 }
 
+/* ─── Miscellaneous ────────────────────────────────────────────────── */
+
 [role="dialog"],
 .modal {
   color: var(--mf-text);
@@ -1053,8 +1062,7 @@ input[type="radio"] {
   border-radius: 12px;
 }
 
-.keyboard-shortcuts,
-.keyboard-shortcuts li {
+.keyboard-shortcuts {
   color: var(--mf-muted);
 }
 
@@ -1063,14 +1071,7 @@ input[type="radio"] {
   box-shadow: var(--mf-focus);
 }
 
-.header li[aria-current="page"] a {
-  padding: 6px 12px;
-}
-
-.item-meta li,
-.entry-meta li {
-  align-items: center;
-}
+/* ─── Accessibility ────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1082,6 +1083,8 @@ input[type="radio"] {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ─── Responsive (≤ 760px) ─────────────────────────────────────────── */
 
 @media (max-width: 760px) {
   :root {
